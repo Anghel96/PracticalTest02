@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PracticalTest02MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:columnCount="3"
+        android:rowCount="7">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SERVER"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_row="0"
+            android:layout_column="1"
+            />
+
+
+        <EditText
+            android:id="@+id/server_port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint = "Port"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:ems = "8"/>
+
+        <Button
+            android:id="@+id/connect_to_server_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connect"
+            android:layout_row="1"
+            android:layout_column="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLIENT"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_row="2"
+            android:layout_column="1"
+            />
+
+        <EditText
+            android:id="@+id/client_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint = "Address"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:ems="8"/>
+
+        <EditText
+            android:id="@+id/client_port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint = "Port"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:ems="8"/>
+
+        <EditText
+            android:id="@+id/city_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint = "City"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:ems="7"/>
+
+        <Button
+            android:id="@+id/weather_information_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Weather Info"
+            android:layout_row="4"
+            android:layout_column="1"/>
+
+        <Spinner
+            android:id="@+id/spinner_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:entries="@array/information" />
+
+        <TextView
+            android:id="@+id/weather_forecast_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="8"
+            android:layout_row="6"
+            />
+
+
+    </GridLayout>
+
+</LinearLayout>

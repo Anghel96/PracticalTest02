@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="information">
+        <item>temperature</item>
+        <item>wind_speed</item>
+        <item>humidity</item>
+        <item>condition</item>
+        <item>pressure</item>
+        <item>all</item>
+    </string-array>
+</resources>
