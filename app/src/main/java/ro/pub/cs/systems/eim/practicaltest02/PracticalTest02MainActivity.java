@@ -23,6 +23,7 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
 
     ServerThread serverThread = null;
     ClientThread clientThread = null;
+    ClientThreadAsyncTask clientThreadAsyncTask = null;
 
     public ConnectButtonListener connectButtonListener = new ConnectButtonListener();
     private class ConnectButtonListener implements Button.OnClickListener {
@@ -80,6 +81,8 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
                 return;
             }
             clientThread = new ClientThread(Integer.parseInt(getClientPort), getClientAddress, city, getInfo, messageTextView);
+            //clientThreadAsyncTask = new ClientThreadAsyncTask(messageTextView);
+            //clientThreadAsyncTask.execute(getClientPort, getClientAddress, city, getInfo);
 
             clientThread.start();
         }
