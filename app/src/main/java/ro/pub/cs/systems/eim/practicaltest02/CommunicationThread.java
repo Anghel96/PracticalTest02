@@ -108,39 +108,39 @@ public class CommunicationThread extends Thread {
                         break;
                     }
                 }
-                if (weatherForecastInformation == null) {
-                    Log.e(Constants.TAG, "[COMMUNICATION THREAD] Weather Forecast Information is null!");
-                    return;
-                }
-
-                String result = null;
-
-                switch (getInfo) {
-                    case Constants.ALL:
-                        result = weatherForecastInformation.toString();
-                        break;
-                    case "temperature":
-                        result = weatherForecastInformation.getTemperature();
-                        break;
-                    case "humidity":
-                        result = weatherForecastInformation.getHumidity();
-                        break;
-                    case Constants.CONDITION:
-                        result = weatherForecastInformation.getCondition();
-                        break;
-                    case Constants.WIND_SPEED:
-                        result = weatherForecastInformation.getWindSpeed();
-                        break;
-                    case Constants.PRESSURE:
-                        result = weatherForecastInformation.getPressure();
-                        break;
-                    default:
-                        result = "[COMMUNICATION THREAD] Wrong information type (all / temperature / wind_speed / condition / humidity / pressure)!";
-                        break;
-                }
-                printWriter.println(result);
-                printWriter.flush();
             }
+            if (weatherForecastInformation == null) {
+                Log.e(Constants.TAG, "[COMMUNICATION THREAD] Weather Forecast Information is null!");
+                return;
+            }
+
+            String result = null;
+
+            switch (getInfo) {
+                case Constants.ALL:
+                    result = weatherForecastInformation.toString();
+                    break;
+                case "temperature":
+                    result = weatherForecastInformation.getTemperature();
+                    break;
+                case "humidity":
+                    result = weatherForecastInformation.getHumidity();
+                    break;
+                case Constants.CONDITION:
+                    result = weatherForecastInformation.getCondition();
+                    break;
+                case Constants.WIND_SPEED:
+                    result = weatherForecastInformation.getWindSpeed();
+                    break;
+                case Constants.PRESSURE:
+                    result = weatherForecastInformation.getPressure();
+                    break;
+                default:
+                    result = "[COMMUNICATION THREAD] Wrong information type (all / temperature / wind_speed / condition / humidity / pressure)!";
+                    break;
+            }
+            printWriter.println(result);
+            printWriter.flush();
         } catch (IOException ioException) {
             Log.e(Constants.TAG, "[COMMUNICATION THREAD] An exception has occurred: " + ioException.getMessage());
             if (Constants.DEBUG) {
